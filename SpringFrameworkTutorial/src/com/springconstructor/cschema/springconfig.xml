@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:c="http://www.springframework.org/schema/c"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean class="com.springconstructor.cschema.Food" name="foodList">
+		<constructor-arg index="0">
+			<list>
+				<value>"Egg Curry"</value>
+				<value>"Mutton Curry"</value>
+				<value>"Butter Paneer"</value>
+				<value>"Chicken Masala"</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<!-- Using the C schema for constructor injection -->
+	<bean class="com.springconstructor.cschema.Person" name="person" c:pid="20051488" c:pname="Manohar Lal Mishra">
+		<property name="foodList" ref="foodList"/>
+	</bean>
+	
+	<!-- Constructor injection in a normal way using 'constructor-arg' -->
+	<bean class="com.springconstructor.cschema.Person" name="people">
+		<constructor-arg index="0" value="6295" type="int"/>
+		<constructor-arg index="1" value="Kumar Sourav" type="String"/>
+		<constructor-arg index="2" ref="foodList" />
+	</bean>
+</beans>

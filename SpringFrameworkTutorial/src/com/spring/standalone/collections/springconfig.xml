@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:util="http://www.springframework.org/schema/util"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<util:list list-class="java.util.ArrayList" id="favFriends">
+		<value>"Banti"</value>
+		<value>"Pintu"</value>
+		<value>"Sarangi"</value>
+		<value>"Varanjee"</value>
+	</util:list>
+	
+	<util:map map-class="java.util.HashMap" id="bucketList">
+		<entry key="1" value="Driving a Sports Car" />
+		<entry key="2" value="Paragliding" />
+		<entry key="3" value="Trekking" />
+	</util:map>
+	
+	<util:properties id="dbconfig">
+		<prop key="driver">com.mysql.jdbc.Driver</prop>
+		<prop key="username">shubham</prop>
+		<prop key="password">1234</prop>
+		<prop key="url">mysql:jdbc://localhost:3306/database</prop>
+	</util:properties>
+	
+	<bean class="com.spring.standalone.collections.Person" id="person" p:friends-ref="favFriends" p:buketList-ref="bucketList" p:properties-ref="dbconfig" />
+	
+</beans>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!-- We can either give id or name or both . We can give multiple names which 
+    	can be space separate or semicolon separate. -->
+    	
+    <bean id = "stud" class="com.springcore.datatypes.Student" name = "Stud Baccha;Balak ; Vidhyarthi">
+    	<property name="rollno" value="1488" />
+    	<property name="name" value="Shubham Tiwari"/>
+    	<property name="address" value="Madhapur,Hyderabad"></property>
+    </bean>
+    
+    <bean id = "student" class="com.springcore.datatypes.Student" p:rollno="17195" p:name="Manoj Kumar Panda" p:address="Jamshedpur,Jharkhand"/>
+
+</beans>

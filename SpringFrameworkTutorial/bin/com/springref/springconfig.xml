@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+	<bean id="emp" class="com.springref.Employee" p:empId="18392" p:empName="Rajat Kumar Bhera" />
+	
+	<bean id="comp" class="com.springref.Company">
+		<property name="companyId" value="2039"/>
+		<property name="companyName" value="ABC Corporation"/>
+		<property name="employee" ref="emp"/>
+	</bean>
+	
+	<bean id="company" class="com.springref.Company" p:companyId="3800" p:companyName="XYZ Private Limited" p:employee-ref="emp" />
+</beans>

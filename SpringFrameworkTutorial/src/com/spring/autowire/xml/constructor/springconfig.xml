@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:c="http://www.springframework.org/schema/c"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean class="com.spring.autowire.xml.constructor.Address" name="address">
+		<property name="city" value="Hyderabad"/>
+		<property name="state" value="Telegana" />
+	</bean>
+	
+	<!-- byName means it will search by the name of the bean . So if you change the name of the bean above it will throw error. -->
+	<bean class="com.spring.autowire.xml.constructor.Person" name="person" autowire="constructor" />
+</beans>
